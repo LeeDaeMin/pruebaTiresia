@@ -1,0 +1,56 @@
+<head>
+    <link rel="stylesheet" href="../public/style.css">
+</head>
+<main class="box">
+    <h1><%- homePage%></h1> 
+
+    <form action="/guadar-datos" method="post" class="">
+
+        <div class="campo" >
+            <label for="">Identificacion</label>
+            <input type="number" name="id" placeholder="Tu Identificacion">
+        </div>
+        
+        <div class="campo">
+            <label for="">Nombre</label>
+        </div>
+        
+        <div class="campo">
+            <label for="">Telefono</label>
+            <input type="number" name="nombre" placeholder="Tu Telefono">
+        </div>
+
+        <div class="campo">
+            <label for="">Direccion residencial</label>
+            <input type="text" name="nombre" placeholder="Tu Direccion residencial">
+        </div>
+
+        <div class="campo">
+            <label for="">Pais</label>
+            <select name="Select" id="opciones">
+                <option value="">Seleccione - </option>
+            </select>
+        </div>
+
+        <div class="campo">
+            <label for="">Departamento</label>
+            <select name="" id="">
+                <option value="">Seleccione - 
+
+                </option>
+            </select>
+        </div>
+
+        <div class="campo">
+            <label for="">Ciudad</label>
+            <select name="" id="">
+                <option value="">Seleccione - </option>
+            </select>
+        </div>
+
+        <div class="enviar">
+            <input type="submit" value="Enviar Datos">
+        </div>
+     
+    </form>
+</main>
