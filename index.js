@@ -5,13 +5,14 @@ const routes = require('./routes');
 
 const app = express();
 
+// Configuracion y modelo BD
 const db = require('./config/db');
     require('./models/Datos');
     db.sync().then(()=>console.log('DB Conectada')).catch((error)=>console.log(error))
 
- //Body Parser, leer formulario 
- app.use(express.json());
- app.use(express.urlencoded({extended: true}))
+//Body Parser, leer formulario 
+app.use(express.json());
+app.use(express.urlencoded({extended: true}))
 
 // Habilitar EJS
 app.use(expressLayouts)
@@ -26,8 +27,13 @@ app.use('/', routes());
 // variable de entorno
 require('dotenv').config({path: 'env.env'});
 
+// Agregar Falsh Message
+app.use(flash());
 
+// archivos staticos
+app.use(express.static('public'));
 
+// Puerto
 app.listen(process.env.PORT || 3000, () => {
     console.log('Server is running...');
 }); 
