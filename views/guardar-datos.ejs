@@ -36,6 +36,11 @@
             <label for="">Departamento</label>
             <select name="" id="">
                 <option value="">Seleccione - 
+                    <!-- bucle para iterar el valor del departamento -->
+                    <% for (let i = 0; i < data.length; i++) {%>
+                        <%  const element = array.deparmento[i];%>
+                        <option value="<%= element %>"><%= element %></option>
+                    <%  } %>
 
                 </option>
             </select>
@@ -44,7 +49,12 @@
         <div class="campo">
             <label for="">Ciudad</label>
             <select name="" id="">
-                <option value="">Seleccione - </option>
+                <option value="">Seleccione - 
+                    <% for (let i = 0; i < data.length; i++) {%>
+                        <%  const element = array.ciudad[i];%>
+                        <option value="<%= element %>"><%= element %></option>
+                    <%  } %>
+                </option>
             </select>
         </div>
 
