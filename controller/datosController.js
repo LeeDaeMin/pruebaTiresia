@@ -13,11 +13,15 @@ exports.getAnswer = async(req, res, next) => {
     try {
         const response = await axios.get(apiUrl);
         const data = response.data;
-        // Pais
-        console.log(data)
         return data;
     } catch(error) {
-        next(error)
-    }
+        
+        // crear un alerta para mostrar el mensaje de error
+        const erroresSequelize = error.errors.map(err => err.message);
+        req.flash('error', erroresSequelize);
+        res.redirect('/guardar-datos')
 
+    }
 }
+
+
