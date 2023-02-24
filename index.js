@@ -5,10 +5,19 @@ const routes = require('./routes');
 
 const app = express();
 
+const db = require('./config/db');
+    require('./models/Datos');
+    db.sync().then(()=>console.log('DB Conectada')).catch((error)=>console.log(error))
 
+ //Body Parser, leer formulario 
+ app.use(express.json());
+ app.use(express.urlencoded({extended: true}))
+
+// Habilitar EJS
 app.use(expressLayouts)
 app.set('view engine', 'ejs')
 
+// Ubicacion Vista
 app.set('views', path.join(__dirname, './views'));
 
 // Routing
